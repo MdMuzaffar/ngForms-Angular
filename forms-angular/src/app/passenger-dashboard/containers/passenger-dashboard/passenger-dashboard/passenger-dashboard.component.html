@@ -1,0 +1,23 @@
+<div>
+    <app-passenger-details></app-passenger-details>
+    <app-passenger-count></app-passenger-count>
+    <h3> Airline Passengers</h3>
+    <ul>
+        <li *ngFor="let passenger of passengers; let i='index'; ">
+            <!-- ---------------------ngClass and className Binding -->
+
+            <!-- <span class="status" [class.checked-In]="passenger.checkedIn"> </span> -->
+
+            <span class="status" [ngClass]="{'checked-In': passenger.checkedIn}"> 
+                
+            </span> {{i+1}} : {{passenger.fullName}}
+            <p> {{passenger | json}} </p>
+            <div class="date">
+                checked In Date : {{passenger.checkedInDate ? (passenger.checkedInDate | date:'yMMMMd') : 'Not checked In'}}
+                <div>
+                    children : {{passenger.childrens?.length || 0}}
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
