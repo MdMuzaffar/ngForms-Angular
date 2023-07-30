@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //container
@@ -20,6 +20,7 @@ import { PassengerDetailsComponent } from '../Components/Passenger-details/passe
   ],
   exports:[
     PassengerDashboardComponent
-  ]
+  ],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class PassengerDashboardModule { }
