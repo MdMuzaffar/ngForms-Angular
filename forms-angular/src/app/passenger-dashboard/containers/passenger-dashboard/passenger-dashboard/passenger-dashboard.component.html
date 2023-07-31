@@ -1,6 +1,6 @@
 <div>
     <app-passenger-count [items]="passengers"></app-passenger-count>
-    <app-passenger-details *ngFor="let passenger of passengers" [detail]="passenger"></app-passenger-details>
+    <app-passenger-details *ngFor="let passenger of passengers" [detail]="passenger" (edit)="handleEdit($event)" (remove)="handleRemove($event)"></app-passenger-details>
     <!-- <h3> Airline Passengers</h3>
     <ul>
         <li *ngFor="let passenger of passengers "> -->

@@ -1,19 +1,23 @@
-<h3> Airline Passengers</h3>
+<h3>Airline Passengers</h3>
 <ul>
     <li>
         <!-- ---------------------ngClass and className Binding -->
 
         <!-- <span class="status" [class.checked-In]="passenger.checkedIn"> </span> -->
 
-        <span class="status" [ngClass]="{'checked-In': detail.checkedIn}"> 
-                
-            </span> {{detail.fullName}}
+        <span class="status" [ngClass]="{ 'checked-In': detail.checkedIn }"> </span>
+        <div *ngIf="editable">
+            <input type="text" [value]="detail.fullName" (input)="onNameChange(name.value)" #name />
+        </div>
+        <div *ngIf="!editable">
+            {{ detail.fullName }}
+        </div>
         <!-- <p> {{detail | json}} </p> -->
         <div class="date">
-            checked In Date : {{detail.checkedInDate ? (detail.checkedInDate | date:'yMMMMd') : 'Not checked In'}}
-            <div>
-                children : {{detail.childrens?.length || 0}}
-            </div>
+            checked In Date : {{ detail.checkedInDate ? (detail.checkedInDate | date : "yMMMMd") : "Not checked In" }}
+            <div>children : {{ detail.childrens?.length || 0 }}</div>
         </div>
+        <button (click)="toggleEdit()">{{ editable ? "Done" : "Edit" }}</button>
+        <button (click)="onRemoves()">Remove</button>
     </li>
 </ul>
