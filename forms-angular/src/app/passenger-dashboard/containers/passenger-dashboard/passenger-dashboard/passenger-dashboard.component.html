@@ -1,16 +1,16 @@
 <div>
     <app-passenger-count [items]="passengers"></app-passenger-count>
-    <app-passenger-details></app-passenger-details>
-    <h3> Airline Passengers</h3>
+    <app-passenger-details *ngFor="let passenger of passengers" [detail]="passenger"></app-passenger-details>
+    <!-- <h3> Airline Passengers</h3>
     <ul>
-        <li *ngFor="let passenger of passengers; let i='index'; ">
-            <!-- ---------------------ngClass and className Binding -->
+        <li *ngFor="let passenger of passengers "> -->
+    <!-- ---------------------ngClass and className Binding -->
 
-            <!-- <span class="status" [class.checked-In]="passenger.checkedIn"> </span> -->
+    <!-- <span class="status" [class.checked-In]="passenger.checkedIn"> </span> -->
 
-            <span class="status" [ngClass]="{'checked-In': passenger.checkedIn}"> 
+    <!-- <span class="status" [ngClass]="{'checked-In': passenger.checkedIn}"> 
                 
-            </span> {{i+1}} : {{passenger.fullName}}
+            </span> {{passenger.fullName}}
             <p> {{passenger | json}} </p>
             <div class="date">
                 checked In Date : {{passenger.checkedInDate ? (passenger.checkedInDate | date:'yMMMMd') : 'Not checked In'}}
@@ -19,5 +19,5 @@
                 </div>
             </div>
         </li>
-    </ul>
+    </ul> -->
 </div>

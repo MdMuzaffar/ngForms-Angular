@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Passenger } from 'src/app/passenger-dashboard/Models/passenger.interface';
 
 @Component({
   selector: 'app-passenger-details',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./passenger-details.component.css']
 })
 export class PassengerDetailsComponent implements OnInit {
-
-  constructor() { }
+@Input()
+  detail!:Passenger;
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

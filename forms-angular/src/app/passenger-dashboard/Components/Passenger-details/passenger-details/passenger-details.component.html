@@ -1,1 +1,19 @@
-<p>passenger-details works!</p>
+<h3> Airline Passengers</h3>
+<ul>
+    <li>
+        <!-- ---------------------ngClass and className Binding -->
+
+        <!-- <span class="status" [class.checked-In]="passenger.checkedIn"> </span> -->
+
+        <span class="status" [ngClass]="{'checked-In': detail.checkedIn}"> 
+                
+            </span> {{detail.fullName}}
+        <!-- <p> {{detail | json}} </p> -->
+        <div class="date">
+            checked In Date : {{detail.checkedInDate ? (detail.checkedInDate | date:'yMMMMd') : 'Not checked In'}}
+            <div>
+                children : {{detail.childrens?.length || 0}}
+            </div>
+        </div>
+    </li>
+</ul>
