@@ -8,6 +8,9 @@ import { PassengerDashboardComponent } from '../containers/passenger-dashboard/p
 import { PassengerCountComponent } from '../Components/passenger-count/passenger-count/passenger-count.component';
 import { PassengerDetailsComponent } from '../Components/Passenger-details/passenger-details/passenger-details.component';
 
+//service
+import { PassengerDashboardService } from '../containers/passenger-dashboard-service/passenger-dashboard.service';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { PassengerDetailsComponent } from '../Components/Passenger-details/passe
   exports:[
     PassengerDashboardComponent
   ],
+  providers:[
+    PassengerDashboardService
+  ]
   // schemas:[CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class PassengerDashboardModule { }
