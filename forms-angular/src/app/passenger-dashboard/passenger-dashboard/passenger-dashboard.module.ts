@@ -1,5 +1,7 @@
 import { NgModule ,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule} from '@angular/common/http'
+// import {HttpClient} from '@angular/common/http'
 
 //container
 import { PassengerDashboardComponent } from '../containers/passenger-dashboard/passenger-dashboard/passenger-dashboard.component';
@@ -19,7 +21,8 @@ import { PassengerDashboardService } from '../containers/passenger-dashboard-ser
     PassengerDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports:[
     PassengerDashboardComponent
