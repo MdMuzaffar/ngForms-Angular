@@ -8,22 +8,21 @@ import { Observable } from 'rxjs';
 // import { map } from 'rxjs/operators';
 // import { map } from 'rxjs/operators';
 
-// const PASSENGER_API: string = '';
+const PASSENGER_API: string = 'http://localhost:3000/passengers';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PassengerDashboardService {
-private PASSENGER_API:string = '/db.josn'
+// private PASSENGER_API:string = '/api/passengers' 
 
   constructor(private http:HttpClient) {
-    console.log(this.http)
    }
 
 
    getPassengers(): Observable<Passenger[]> {
-    return this.http.get<Passenger[]>(this.PASSENGER_API);
+    return this.http.get<Passenger[]>(PASSENGER_API);
   }
 
   //   [{
